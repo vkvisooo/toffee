@@ -1,0 +1,87 @@
+@mixin center($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+@mixin color{
+	background: #b0b394
+}
+/*&.both{
+	@include center;
+}
+
+&.vertical{
+	@include center(false,true);
+}*/
+.outer-div{
+ 	 @include span(12 of 12 start);
+	 height:200px; 
+	@include color;
+	position:relative;
+	
+}
+.outer-div1{
+ 	 @include span(12 of 12 start);
+	 height:200px; 
+	background:#7979b3;
+	position:relative;
+	
+}
+.outer-div2{
+ 	 @include span(12 of 12 start);
+	 height:200px; 
+	@include color;
+	position:relative;
+	
+}
+/*.push{
+	@include push(3 of 12);
+}*/
+.inner-div1{
+	
+	@include span(3 of 12 );
+	&.horizontal{
+		@include center(false,true)
+	};
+	
+	@media(max-width: 600px){
+		@include push(1.5 of 12)
+		/*-webkit-transition-property: width, height;
+    -webkit-transition-duration: 2s; 
+    transition-property: width, height;
+    transition-duration: 2s*/
+	}
+
+  }
+.inner-div2 {
+	 @include span(3 of 12 ); 
+	 &.verti{
+	 	@include center(true,false)
+	 }
+}
+.inner-div3 {
+	 @include span(last 3 of 12 );
+	 @media(max-width: 600px){
+	 	@include span(last 3 of 12)
+	 }
+	 &.both{
+	 	@include center(true , true)
+	 }
+  }
+
+  .para{
+  	&.horizontal{
+		@include center(true,false);
+	} ;
+	background:green;
+  }
+  

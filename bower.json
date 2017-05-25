@@ -1,0 +1,12 @@
+{
+  "name": "project",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "susy": "^2.2.12"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.4.1"
+  }
+}
